@@ -1,0 +1,37 @@
+﻿@using GeziRehberi.Model
+@model List<User>
+
+@{
+    ViewBag.Title = "UserList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+      <table></table>  <tr>
+            <th>KULLANICILAR</th>
+        </tr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kullanıcı Adı</th>
+                <th>Adı</th>
+                <th>Soyadı</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (User item in Model)
+            {
+                <tr>
+                    <td>@item.Username</td>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    @*<td>@Html.ActionLink("Sil", "Delete", new { commentid = item.ID }, new { @class = "btn btn-danger" })</td>*@
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

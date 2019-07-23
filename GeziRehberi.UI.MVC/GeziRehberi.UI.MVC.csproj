@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA47ABE0-B633-4ADA-ADD1-BF86FC743716}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeziRehberi.UI.MVC</RootNamespace>
+    <AssemblyName>GeziRehberi.UI.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC4.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\images\about.jpg" />
+    <Content Include="Assets\images\about_1.jpg" />
+    <Content Include="Assets\images\ankara.jpg" />
+    <Content Include="Assets\images\ankara_690x500.jpg" />
+    <Content Include="Assets\images\around.svg" />
+    <Content Include="Assets\images\beach.svg" />
+    <Content Include="Assets\images\bg-01.jpg" />
+    <Content Include="Assets\images\boat.svg" />
+    <Content Include="Assets\images\camera.svg" />
+    <Content Include="Assets\images\contact.jpg" />
+    <Content Include="Assets\images\destinations.jpg" />
+    <Content Include="Assets\images\destination_1.jpg" />
+    <Content Include="Assets\images\destination_2.jpg" />
+    <Content Include="Assets\images\destination_3.jpg" />
+    <Content Include="Assets\images\destination_4.jpg" />
+    <Content Include="Assets\images\destination_5.jpg" />
+    <Content Include="Assets\images\destination_6.jpg" />
+    <Content Include="Assets\images\destination_7.jpg" />
+    <Content Include="Assets\images\destination_8.jpg" />
+    <Content Include="Assets\images\destination_9.jpg" />
+    <Content Include="Assets\images\elements.jpg" />
+    <Content Include="Assets\images\footer_1.jpg" />
+    <Content Include="Assets\images\fransa_690x500.jpg" />
+    <Content Include="Assets\images\gamze.jpg" />
+    <Content Include="Assets\images\Gaziantep-2_690x500.jpg" />
+    <Content Include="Assets\images\home_slider.jpg" />
+    <Content Include="Assets\images\intro.png" />
+    <Content Include="Assets\images\island.svg" />
+    <Content Include="Assets\images\ist_690x500.jpg" />
+    <Content Include="Assets\images\izmir_690x500.jpg" />
+    <Content Include="Assets\images\latest_1.jpg" />
+    <Content Include="Assets\images\latest_2.jpg" />
+    <Content Include="Assets\images\latest_3.jpg" />
+    <Content Include="Assets\images\mardin_690x500.jpg" />
+    <Content Include="Assets\images\mountain.svg" />
+    <Content Include="Assets\images\news.jpg" />
+    <Content Include="Assets\images\news_1.jpg" />
+    <Content Include="Assets\images\news_2.jpg" />
+    <Content Include="Assets\images\news_3.jpg" />
+    <Content Include="Assets\images\news_4.jpg" />
+    <Content Include="Assets\images\news_5.jpg" />
+    <Content Include="Assets\images\news_6.jpg" />
+    <Content Include="Assets\images\pinar_195x195.jpg" />
+    <Content Include="Assets\images\pisa-kulesi-italya-810x540_690x500.jpg" />
+    <Content Include="Assets\images\pragg2-1_690x500.jpg" />
+    <Content Include="Assets\images\sign.svg" />
+    <Content Include="Assets\images\suheda1_195x195.jpg" />
+    <Content Include="Assets\images\suheda_195x195.jpg" />
+    <Content Include="Assets\images\suitcase.svg" />
+    <Content Include="Assets\images\team_1.jpg" />
+    <Content Include="Assets\images\team_2.jpg" />
+    <Content Include="Assets\images\team_3.jpg" />
+    <Content Include="Assets\images\team_4.jpg" />
+    <Content Include="Assets\images\testimonials.jpg" />
+    <Content Include="Assets\images\trabzon_690x500.jpg" />
+    <Content Include="Assets\images\travello.jpg" />
+    <Content Include="Assets\images\trekking.svg" />
+    <Content Include="Assets\images\wallet.svg" />
+    <Content Include="Assets\images\why.jpg" />
+    <Content Include="Assets\images\why_1.jpg" />
+    <Content Include="Assets\images\why_1.svg" />
+    <Content Include="Assets\images\why_2.jpg" />
+    <Content Include="Assets\images\why_2.svg" />
+    <Content Include="Assets\images\why_3.jpg" />
+    <Content Include="Assets\images\why_3.svg" />
+    <Content Include="Assets\images\ist.jpg" />
+    <Content Include="Assets\js\about.js" />
+    <Content Include="Assets\js\contact.js" />
+    <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\destinations.js" />
+    <Content Include="Assets\js\elements.js" />
+    <Content Include="Assets\js\jquery-3.2.1.min.js" />
+    <Content Include="Assets\js\news.js" />
+    <Content Include="Assets\plugins\easing\easing.js" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Assets\plugins\greensock\animation.gsap.min.js" />
+    <Content Include="Assets\plugins\greensock\ScrollToPlugin.min.js" />
+    <Content Include="Assets\plugins\greensock\TimelineMax.min.js" />
+    <Content Include="Assets\plugins\greensock\TweenMax.min.js" />
+    <Content Include="Assets\plugins\Isotope\isotope.pkgd.min.js" />
+    <Content Include="Assets\plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="Assets\plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="Assets\plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="Assets\plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="Assets\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="Assets\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="Assets\plugins\parallax-js-master\parallax.min.js" />
+    <Content Include="Assets\plugins\progressbar\progressbar.min.js" />
+    <Content Include="Assets\plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="Assets\plugins\scrollTo\jquery.scrollTo.min.js" />
+    <Content Include="Assets\styles\about.css" />
+    <Content Include="Assets\styles\about_responsive.css" />
+    <Content Include="Assets\styles\bootstrap4\bootstrap.min.css" />
+    <Content Include="Assets\styles\bootstrap4\bootstrap.min.js" />
+    <Content Include="Assets\styles\bootstrap4\popper.js" />
+    <Content Include="Assets\styles\contact.css" />
+    <Content Include="Assets\styles\contact_responsive.css" />
+    <Content Include="Assets\styles\destinations.css" />
+    <Content Include="Assets\styles\destinations_responsive.css" />
+    <Content Include="Assets\styles\elements.css" />
+    <Content Include="Assets\styles\elements_responsive.css" />
+    <Content Include="Assets\styles\main_styles.css" />
+    <Content Include="Assets\styles\news.css" />
+    <Content Include="Content\Images\Ankara\1otel.jpg" />
+    <Content Include="Content\Images\Ankara\2.jpg" />
+    <Content Include="Content\Images\Ankara\3.jpg" />
+    <Content Include="Content\Images\Ankara\3otel.jpg" />
+    <Content Include="Content\Images\Ankara\Anitkabir.jpg" />
+    <Content Include="Content\Images\Ankara\ankara.jpg" />
+    <Content Include="Content\Images\Ankara\atakule.jpg" />
+    <Content Include="Content\Images\Ankara\degirmencioglu.jpg" />
+    <Content Include="Content\Images\Ankara\haci-bayram-veli.jpg" />
+    <Content Include="Content\Images\Ankara\meclis.jpg" />
+    <Content Include="Content\Images\Ankara\tuz-golu.jpg" />
+    <Content Include="Content\Images\Ankara\White-Tail-Dag-Evi-Elmadag.jpg" />
+    <Content Include="Content\Images\Fransa\1otel.jpg" />
+    <Content Include="Content\Images\Fransa\beneluks-fransa.jpg" />
+    <Content Include="Content\Images\Fransa\Fransa-Maliyet-8.jpg" />
+    <Content Include="Content\Images\Fransa\fransa.jpg" />
+    <Content Include="Content\Images\Fransa\frnc.jpg" />
+    <Content Include="Content\Images\Fransa\hotel-grand-powers-v1-12-05-2018.jpg" />
+    <Content Include="Content\Images\Fransa\hotel-la-nouvelle-republique.jpg" />
+    <Content Include="Content\Images\Fransa\il-etait-un-square.jpg" />
+    <Content Include="Content\Images\Fransa\jean-yves-s-signature.jpg" />
+    <Content Include="Content\Images\Fransa\patchanka-restaurant-argentin-paris-11e.jpg" />
+    <Content Include="Content\Images\Gaziantep\1rest.jpg" />
+    <Content Include="Content\Images\Gaziantep\ali-bey-konagi.jpg" />
+    <Content Include="Content\Images\Gaziantep\anadoluhotelleri.jpg" />
+    <Content Include="Content\Images\Gaziantep\arifbey_konak.jpg" />
+    <Content Include="Content\Images\Gaziantep\bakir-in-hayat-buldugu.jpg" />
+    <Content Include="Content\Images\Gaziantep\gaziantep_hayvanat_bahcesi.jpg" />
+    <Content Include="Content\Images\Gaziantep\hisvahan-develik-restaurant.jpg" />
+    <Content Include="Content\Images\Gaziantep\rumkale3.jpg" />
+    <Content Include="Content\Images\Gaziantep\yesemek_acik_hava_muzesi_ve_heykel_atolyesi_h13464_64c06.jpg" />
+    <Content Include="Content\Images\Gaziantep\zeugma-mozaik-muzesi.jpg" />
+    <Content Include="Content\Images\Gaziantep\çulcuoğlu.jpg" />
+    <Content Include="Content\Images\Mardin\alsahan-kaburga-dolmasi-burada.jpg" />
+    <Content Include="Content\Images\Mardin\asude.jpg" />
+    <Content Include="Content\Images\Mardin\deyrulzafaran-manastiri.jpg" />
+    <Content Include="Content\Images\Mardin\kayaninova.jpg" />
+    <Content Include="Content\Images\Mardin\mardin.jpg" />
+    <Content Include="Content\Images\Mardin\mardinkalesi.jpg" />
+    <Content Include="Content\Images\Mardin\mardius-tarihi-konak.jpg" />
+    <Content Include="Content\Images\Mardin\mardius.jpg" />
+    <Content Include="Content\Images\Mardin\seyr-i-merdin.jpg" />
+    <Content Include="Content\Images\Mardin\Zinciriye-Medresesi-Mardin-gezilecek-yerler-1.jpg" />
+    <Content Include="Content\Images\Mardin\zinciriye.jpg" />
+    <Content Include="Content\Images\Trabzon\bozopide.jpg" />
+    <Content Include="Content\Images\Trabzon\cemilusta-akcaabat.jpg" />
+    <Content Include="Content\Images\Trabzon\galoomad%28uzungölkahvaltı%29.jpg" />
+    <Content Include="Content\Images\Trabzon\Goblec%28uzungöl%29.jpg" />
+    <Content Include="Content\Images\Trabzon\sis-dagi-yaylasi.jpg" />
+    <Content Include="Content\Images\Trabzon\sümela-manastırı.jpg" />
+    <Content Include="Content\Images\Trabzon\sümelaparkotel.jpg" />
+    <Content Include="Content\Images\Trabzon\trabzon%28dedeman%29.jpg" />
+    <Content Include="Content\Images\Trabzon\trabzon.jpg" />
+    <Content Include="Content\Images\Çek-Prag\1otel.jpg" />
+    <Content Include="Content\Images\Çek-Prag\2.jpg" />
+    <Content Include="Content\Images\Çek-Prag\2otel.jpg" />
+    <Content Include="Content\Images\Çek-Prag\krakow-prag-.jpg" />
+    <Content Include="Content\Images\Çek-Prag\photo-3.jpg" />
+    <Content Include="Content\Images\Çek-Prag\Prag-gece-hayatı.jpg" />
+    <Content Include="Content\Images\Çek-Prag\prag-restaurant.jpg" />
+    <Content Include="Content\Images\Çek-Prag\Prag-Yapilacak-Seyleri.jpg" />
+    <Content Include="Content\Images\Çek-Prag\pragg2-1.jpg" />
+    <Content Include="Content\Images\Çek-Prag\prag_1497361175.jpg" />
+    <Content Include="Content\Images\İngiltere\ing.jpg" />
+    <Content Include="Content\Images\İngiltere\ing2.jpg" />
+    <Content Include="Content\Images\İngiltere\otel.jpg" />
+    <Content Include="Content\Images\İngiltere\otel2.jpg" />
+    <Content Include="Content\Images\İngiltere\otel3.jpg" />
+    <Content Include="Content\Images\İngiltere\qratxc6mlf-2754-ingiltere-dil-okullari-jpg.jpg" />
+    <Content Include="Content\Images\İngiltere\restaurant-06.jpg" />
+    <Content Include="Content\Images\İngiltere\restaurant.jpeg" />
+    <Content Include="Content\Images\İngiltere\restaurant3.jpeg" />
+    <Content Include="Content\Images\İstanbul\735Kızkulesi_121750228.jpg" />
+    <Content Include="Content\Images\İstanbul\bogaz.jpg" />
+    <Content Include="Content\Images\İstanbul\eminonu-balikcilar-2.jpg" />
+    <Content Include="Content\Images\İstanbul\galata-kulesi-ulasim.jpg" />
+    <Content Include="Content\Images\İstanbul\galata-tower-suıtes.jpg" />
+    <Content Include="Content\Images\İstanbul\hotel-suadiye-kadıköy.jpg" />
+    <Content Include="Content\Images\İstanbul\ist.jpg" />
+    <Content Include="Content\Images\İstanbul\istiklal-caddesi-istanbul.jpg" />
+    <Content Include="Content\Images\İstanbul\lacivert.jpg" />
+    <Content Include="Content\Images\İstanbul\ortaköy-res.jpg" />
+    <Content Include="Content\Images\İstanbul\Ortaköy.jpg" />
+    <Content Include="Content\Images\İstanbul\sheraton.jpg" />
+    <Content Include="Content\Images\İstanbul\sultanahmet-gezilecek-yerler.jpg" />
+    <Content Include="Content\Images\İtalya\1rest.jpg" />
+    <Content Include="Content\Images\İtalya\2rest.jpg" />
+    <Content Include="Content\Images\İtalya\3rest.jpg" />
+    <Content Include="Content\Images\İtalya\BIR-BASKA-ITALYA-TURU-AVRUPA.jfif" />
+    <Content Include="Content\Images\İtalya\italya-gidahatti.jpg" />
+    <Content Include="Content\Images\İtalya\itly.jpg" />
+    <Content Include="Content\Images\İtalya\itly2.jpg" />
+    <Content Include="Content\Images\İtalya\klasik-italya-kis-turu-1144--1-30.08.2017154442-b0.jpg" />
+    <Content Include="Content\Images\İtalya\otel1.jpg" />
+    <Content Include="Content\Images\İtalya\otel2.jpg" />
+    <Content Include="Content\Images\İtalya\otel3.jpg" />
+    <Content Include="Content\Images\İtalya\pisa-kulesi-italya-810x540.jpg" />
+    <Content Include="Content\Images\İzmir\boğaziçi-restaurant-1.jpg" />
+    <Content Include="Content\Images\İzmir\izmir.jpg" />
+    <Content Include="Content\Images\İzmir\kizlaragasihaniizmir.jpg" />
+    <Content Include="Content\Images\İzmir\kordon.jpg" />
+    <Content Include="Content\Images\İzmir\pianohotel.jpg" />
+    <Content Include="Content\Images\İzmir\saatkulesiizmir.jpg" />
+    <Content Include="Content\Images\İzmir\sakiz.jpg" />
+    <Content Include="Content\Images\İzmir\wyndhamözdilekhotel.jpg" />
+    <Content Include="Content\Images\İzmir\yengec-restaurant.jpg" />
+    <Content Include="Assets\styles\responsive.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Logassets\css\main.css" />
+    <Content Include="Logassets\css\util.css" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Logassets\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Logassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Logassets\fonts\montserrat\OFL.txt" />
+    <Content Include="Logassets\images\bg-01.jpg" />
+    <Content Include="Logassets\images\icons\favicon.ico" />
+    <Content Include="Logassets\js\main.js" />
+    <Content Include="Logassets\vendor\animate\animate.css" />
+    <Content Include="Logassets\vendor\animsition\css\animsition.css" />
+    <Content Include="Logassets\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Logassets\vendor\animsition\js\animsition.js" />
+    <Content Include="Logassets\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Logassets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Logassets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Logassets\vendor\bootstrap\js\popper.js" />
+    <Content Include="Logassets\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Logassets\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Logassets\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Logassets\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Logassets\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Logassets\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Logassets\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Logassets\vendor\daterangepicker\moment.js" />
+    <Content Include="Logassets\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Logassets\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Logassets\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Logassets\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Logassets\vendor\select2\select2.css" />
+    <Content Include="Logassets\vendor\select2\select2.js" />
+    <Content Include="Logassets\vendor\select2\select2.min.css" />
+    <Content Include="Logassets\vendor\select2\select2.min.js" />
+    <Content Include="plugins\easing\easing.js" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="plugins\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="plugins\greensock\animation.gsap.min.js" />
+    <Content Include="plugins\greensock\ScrollToPlugin.min.js" />
+    <Content Include="plugins\greensock\TimelineMax.min.js" />
+    <Content Include="plugins\greensock\TweenMax.min.js" />
+    <Content Include="plugins\Isotope\isotope.pkgd.min.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="plugins\parallax-js-master\parallax.min.js" />
+    <Content Include="plugins\parallax.js-1.5.0\parallax.js" />
+    <Content Include="plugins\parallax.js-1.5.0\parallax.min.js" />
+    <Content Include="plugins\progressbar\progressbar.min.js" />
+    <Content Include="plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="plugins\scrollTo\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="plugins\parallax.js-1.5.0\bower.json" />
+    <Content Include="plugins\parallax.js-1.5.0\LICENSE" />
+    <Content Include="plugins\parallax.js-1.5.0\package.json" />
+    <Content Include="plugins\parallax.js-1.5.0\README.md" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Assets\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Logassets\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Logassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Logassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Logassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Logassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Logassets\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Logassets\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Logassets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\js\about.js" />
+    <Content Include="Scripts\js\contact.js" />
+    <Content Include="Scripts\js\custom.js" />
+    <Content Include="Scripts\js\destinations.js" />
+    <Content Include="Scripts\js\elements.js" />
+    <Content Include="Scripts\js\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\js\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\js\news.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\HaberController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomFilter\AdminFilterAttribute.cs" />
+    <Compile Include="CustomFilter\CustomFilterAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MailHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\City\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\City\Comment.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Admin\List.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Home\Hesap.cshtml" />
+    <Content Include="Views\Admin\UserDelete.cshtml" />
+    <Content Include="Views\Admin\UserList.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\CommentDelete.cshtml" />
+    <Content Include="Views\Haber\Index.cshtml" />
+    <Content Include="Views\Admin\GezilecekYerEkle.cshtml" />
+    <Content Include="Views\Home\Update.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeziRehberi.BLL\GeziRehberi.BLL.csproj">
+      <Project>{ad785003-8e9d-447a-8aec-a6d7fac8b5cb}</Project>
+      <Name>GeziRehberi.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeziRehberi.Core\GeziRehberi.Core.csproj">
+      <Project>{f8c9008a-f8de-42a7-9e46-e0c58e9eda2c}</Project>
+      <Name>GeziRehberi.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeziRehberi.DAL\GeziRehberi.DAL.csproj">
+      <Project>{94e5d2cd-8fda-4ac1-bade-9d818d8741f8}</Project>
+      <Name>GeziRehberi.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeziRehberi.Model\GeziRehberi.Model.csproj">
+      <Project>{92cd9ee9-d336-4a30-b4fc-e702732238d7}</Project>
+      <Name>GeziRehberi.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57978</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57978/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

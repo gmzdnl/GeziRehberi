@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="Refresh" content="5;url=http://www.hurriyet.com.tr/haberleri/turizm" />
+</head>
+
+<body onload="stopwatch()">
+    <div class="container">
+        <div class=" row justify-content-md-center" style="margin-top:300px;">
+            <h1><p>Travello tarafından Hürriyet Turizm haberlerine,</p></h1>
+            <h1> <span id="time">5</span> saniye sonra yönlendirileceksiniz.</h1>
+        </div>
+    </div>
+
+    <script>
+    var time = 5;
+
+    function stopwatch() {
+      setInterval(() => {
+        time = (time > 1 ? time - 1 : 1);
+        document.getElementById('time').innerText = time;
+      }, 1000)
+    }
+    </script>
+</body>
+
+

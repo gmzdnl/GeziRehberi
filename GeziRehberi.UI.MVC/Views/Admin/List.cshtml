@@ -1,0 +1,34 @@
+﻿@using GeziRehberi.Model
+@model List<Comments>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kullanıcı Adı</th>
+                <th>Şehir Adı</th>
+                <th>Tüm Yorumlar</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Comments item in Model)
+            {
+                <tr>
+                    <td>@item.User.Name</td>
+                    <td>@item.City.Name</td>
+                    <td>@item.Comment</td>
+                    <td>@Html.ActionLink("Sil", "Delete", new { commentid = item.ID }, new { @class = "btn btn-danger" })</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

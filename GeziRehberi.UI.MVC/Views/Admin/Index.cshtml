@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        <table>
+          
+            <tr>
+                <td><a href="@Url.Action("UserList")" class="btn btn-outline-primary">Kullanıcı</a></td>
+                <td><a href="@Url.Action("List")" class="btn btn-outline-primary">Yorum</a></td>
+                <td><a href="@Url.Action("GezilecekYerEkle")" class="btn btn-outline-primary">Gezilecek Yer Ekle</a></td>
+            </tr>
+        </table>
+
+    </div>
+}

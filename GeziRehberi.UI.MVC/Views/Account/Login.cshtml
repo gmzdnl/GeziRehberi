@@ -1,0 +1,47 @@
+﻿@using GeziRehberi.Model
+@model User
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Giriş Ekranı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Kullanıcı Adı:</label>
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Şifre:</label>
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", type = "password" })
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Çıkış</button>
+                    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal2" onclick="giriskapa()">Üye Ol</button>
+                </div>
+            }
+
+            <div class="panel-footer">
+                @if (ViewBag.Error != null)
+                {
+                    <span>@ViewBag.Error</span>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Action("Register", "Account")
+
+

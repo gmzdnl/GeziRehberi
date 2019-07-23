@@ -1,0 +1,176 @@
+﻿@using GeziRehberi.Model
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}@{
+    User user = null;
+    if (Session["kullanici"] != null)
+    {
+        user = Session["kullanici"] as User;
+    }
+}
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+                        <div class="logo"><a href="@Url.Action("Index","Home")">Travello</a></div>
+                        <nav class="main_nav">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                <li class="active"><a href="@Url.Action("Index","Home")">Anasayfa</a></li>
+                                <li><a href="@Url.Action("Index","Haber")">Haberler</a></li>
+                                <li><a href="@Url.Action("Index","About")">Hakkımızda</a></li>
+                                @if (user == null)
+                                {
+
+                                }
+                                else
+                                {
+                                    <li class="nav-item dropdown">
+                                        <a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="top:50px !important;">
+                                            @user.Name @user.Surname
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="@Url.Action("Hesap","Home")">Hesabım</a>
+                                            <a class="dropdown-item" href="@Url.Action("Logout", "Account")">Çıkış Yap</a>
+                                        </div>
+                                    </li>
+                                }
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- why choose us -->
+
+<div class="why">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="../../Assets/images/why.jpg" data-speed="0.8"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title"><h2>Neden Biz?</h2></div>
+            </div>
+        </div>
+        <div class="row why_row">
+
+            <!-- why item -->
+            <div class="col-lg-4 why_col">
+                <div class="why_item">
+                    <div class="why_image">
+                        <img src="~/Assets/images/why_1.jpg" alt="">
+                        <div class="why_icon d-flex flex-column align-items-center justify-content-center">
+                            <img src="~/Assets/images/why_1.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="why_content text-center">
+                        <div class="why_title">Hızlı İletişim</div>
+                        <div class="why_text">
+                            <p>Sitemiz ile ilgili her soruya anında cevap vermekteyiz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- why item -->
+            <div class="col-lg-4 why_col">
+                <div class="why_item">
+                    <div class="why_image">
+                        <img src="~/Assets/images/why_2.jpg" alt="">
+                        <div class="why_icon d-flex flex-column align-items-center justify-content-center">
+                            <img src="~/Assets/images/why_2.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="why_content text-center">
+                        <div class="why_title">Mükemmel Takım</div>
+                        <div class="why_text">
+                            <p>Sizi memnun etmek için takım olarak buradayız</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- why item -->
+            <div class="col-lg-4 why_col">
+                <div class="why_item">
+                    <div class="why_image">
+                        <img src="~/Assets/images/why_3.jpg" alt="">
+                        <div class="why_icon d-flex flex-column align-items-center justify-content-center">
+                            <img src="~/Assets/images/why_3.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="why_content text-center">
+                        <div class="why_title">En İyi Hizmet</div>
+                        <div class="why_text">
+                            <p>Beklentilerinizin üstünde hizmet anlayışı sağlayan en güncel site</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="team">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title"><h2>Hadi Tanışalım</h2></div>
+            </div>
+        </div>
+        <div class="row team_row">
+
+            <!-- Team Item -->
+            <div class="col-xl-3 col-md-6 team_col">
+                <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                    <div class="team_image"><img src="../../Assets/images/suheda1_195x195.jpg" alt=""></div>
+                    <div class="team_content">
+                        <div class="team_title"><a href="#">Şüheda YAMAN</a></div>
+                        <div class="team_text">
+                            <p>linkedin.com/in/suhedayaman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Item -->
+            <div class="col-xl-3 col-md-6 team_col">
+                <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                    <div class="team_image"><img src="../../Assets/images/pinar_195x195.jpg" alt=""></div>
+                    <div class="team_content">
+                        <div class="team_title"><a href="#">Pınar SARIKOÇ</a></div>
+                        <div class="team_text">
+                            <p>linkedin.com/in/pinarsarikoc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Item -->
+            <div class="col-xl-3 col-md-6 team_col">
+                <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                    <div class="team_image"><img src="~/Assets/images/gamze.jpg" alt=""></div>
+                    <div class="team_content">
+                        <div class="team_title"><a href="#">Gamze DENLİ</a></div>
+                        <div class="team_text">
+                            <p>linkedin.com/in/gamzedenli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+

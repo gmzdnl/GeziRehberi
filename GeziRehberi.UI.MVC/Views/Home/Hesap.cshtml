@@ -1,0 +1,71 @@
+﻿@using GeziRehberi.Model
+@model User
+@{
+    ViewBag.Title = "Hesap";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@if (Session["kullanici"] != null)
+{
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Bilgileri</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <td>@Model.Username</td>
+                </tr>
+                <tr>
+                    <th>Adı:</th>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr>
+                    <th>Soyadı:</th>
+                    <td>@Model.Surname</td>
+                </tr>
+                <tr>
+                    <th>Mail:</th>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr>
+                    <th>Şifre:</th>
+                    <td>@Model.Password</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        @Html.ActionLink("Güncelle", "Update", new { userid = Model.ID }, new { @class = "btn btn-primary" })
+                    </td>
+                </tr>
+            </tbody>
+
+    </table>
+
+        <div>
+            <h3>Yorumlar</h3>
+        </div>
+
+                @foreach (var item in ViewBag.Comments)
+                {
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="d-flex flex-column">
+                                    <div class="p-2">@item.Comment </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                @Html.ActionLink("Sil", "CommentDelete", new { commentid = item.ID }, new { @class = "btn btn-danger" })
+                            </div>
+
+                        </div>
+                    </div>
+                }
+     
+</div>
+}

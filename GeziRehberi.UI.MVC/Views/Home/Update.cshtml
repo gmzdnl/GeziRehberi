@@ -1,0 +1,43 @@
+﻿@using GeziRehberi.Model
+@model User
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        @Html.TextBoxFor(a => a.ID, new { @type = "hidden" })
+        <div class="form-group">
+            <label>Kullanıcı adı:</label>
+            @Html.TextBoxFor(a => a.Username, new { @class = "form-control", placeholder = "Kullanıcı Adınızı Giriniz" })
+        </div>
+        <div class="form-group">
+            <label>Adı:</label>
+            @Html.TextBoxFor(a => a.Name, new { @class = "form-control", placeholder = "Adınızı Giriniz" })
+        </div>
+        <div class="form-group">
+            <label>Soyadı:</label>
+            @Html.TextBoxFor(a => a.Surname, new { @class = "form-control", placeholder = "Soyadınızı Giriniz" })
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            @Html.TextBoxFor(a => a.Email, new { @class = "form-control", placeholder = "Mail Adresinizi Giriniz" })
+        </div>
+        <div class="form-group">
+            <label>Şifre:</label>
+            @Html.TextBoxFor(a => a.Password, new { @class = "form-control", placeholder = "Şifrenizi Giriniz" })
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+    }
+</div>
+<div>
+    @if (ViewBag.IsSuccess != null)
+    {
+        <span class="alert alert-danger">Kaydetme başarısız!</span>
+
+    }
+</div>

@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Assets/styles/about.css" rel="stylesheet" />
+    <link href="~/Assets/styles/bootstrap4/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/OwlCarousel2-2.2.1/animate.css" rel="stylesheet" />
+    <link href="~/Assets/styles/main_styles.css" rel="stylesheet" />
+    <link href="~/Assets/styles/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="super_container">
+
+        <!-- Header -->
+        <!-- Home -->
+
+        <div class="home">
+
+            <!-- Home Slider -->
+            <div class="home_slider_container">
+                <div class="owl-carousel owl-theme home_slider">
+
+                    <!-- Slide -->
+                    <div class="owl-item">
+                        <div class="background_image" style="background-image:url(../../Assets/images/home_slider.jpg)"></div>
+                        <div class="home_slider_content_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="home_slider_content">
+                                            <div class="home_title"><h2>Gez Gezebildiğin Kadar</h2></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide -->
+                    <div class="owl-item">
+                        <div class="background_image" style="background-image:url(../../Assets/images/news.jpg)"></div>
+                        <div class="home_slider_content_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="home_slider_content">
+                                            <div class="home_title"><h2>Öğrenmek İstiyorsan Seyahat Et</h2></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide -->
+                    <div class="owl-item">
+                        <div class="background_image" style="background-image:url(../../Assets/images/destination_2.jpg)"></div>
+                        <div class="home_slider_content_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="home_slider_content">
+                                            <div class="home_title"><h2>Dünyayı Dolaşın,Görebileceğiniz Bütün Rüyaların En Muhteşemi!</h2></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="home_page_nav">
+                    <ul class="d-flex flex-column align-items-end justify-content-end">
+                        @*<li><a href="#" data-scroll-to="#destinations">Rotalarımız<span>01</span></a></li>*@
+                        @*<li><a href="#" data-scroll-to=".footer">İletişim</a></li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Intro -->
+
+        <div class="intro">
+            <div class="intro_background" style="background-image:url(../../Assets/images/intro.png)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="intro_container">
+                            <div class="row">
+
+                                <!-- Intro Item -->
+                                <div class="col-lg-4 intro_col">
+                                    <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                                        <div class="intro_icon"><img src="../../Assets/images/beach.svg" alt=""></div>
+                                        <div class="intro_content">
+                                            <div class="intro_title">En Popüler Yer</div>
+                                            <div class="intro_subtitle"><p>Sitemizde gitmek istediğiniz yer bir tık ötenizde...</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Intro Item -->
+                                <div class="col-lg-4 intro_col">
+                                    <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                                        <div class="intro_icon"><img src="../../Assets/images/wallet.svg" alt=""></div>
+                                        <div class="intro_content">
+                                            <div class="intro_title">En Uygun Fiyat</div>
+                                            <div class="intro_subtitle"><p>Uygun fiyat garatisi ile...</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Intro Item -->
+                                <div class="col-lg-4 intro_col">
+                                    <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                                        <div class="intro_icon"><img src="../../Assets/images/suitcase.svg" alt=""></div>
+                                        <div class="intro_content">
+                                            <div class="intro_title">En İyi Seyahat</div>
+                                            <div class="intro_subtitle"><p>En rahat seyahat...</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+
+
+
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="../Assets/images/footer_1.jpg" data-speed="0.8"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="newsletter">
+                            <div class="newsletter_title_container text-center">
+                                <div class="newsletter_title">Ziyaretiniz için teşekkürler. Size faydalı olmak bizi güçlendirir!</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row footer_contact_row">
+                    <div class="col-xl-10 offset-xl-1">
+                        <div class="row">
+
+                            <!-- Footer Contact Item -->
+                            <div class="col-xl-4 footer_contact_col">
+                                <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                                    <div class="footer_contact_icon"><img src="../Assets/images/sign.svg" alt=""></div>
+                                    <div class="footer_contact_title">Bizi Arayın</div>
+                                    <div class="footer_contact_list">
+                                        <ul>
+                                            <li>Ofis Telefonu: +44 5567 32 664 567</li>
+                                            <li>Cep Telefonu: +44 5567 89 3322 332</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Contact Item -->
+                            <div class="col-xl-4 footer_contact_col">
+                                <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                                    <div class="footer_contact_icon"><img src="../Assets/images/trekking.svg" alt=""></div>
+                                    <div class="footer_contact_title">Hadi Uğrayın</div>
+                                    <div class="footer_contact_list">
+                                        <ul style="max-width:190px">
+                                            <li>Bakırköy/İstanbul</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Contact Item -->
+                            <div class="col-xl-4 footer_contact_col">
+                                <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                                    <div class="footer_contact_icon"><img src="../Assets/images/around.svg" alt=""></div>
+                                    <div class="footer_contact_title">Mesaj Gönderin</div>
+                                    <div class="footer_contact_list">
+                                        <ul>
+                                            <li>kurumsalolmayan.ba@gmail.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+        </footer>
+
+
+
+        @*<script src="~/Assets/js/jquery-3.2.1.min.js"></script>*@
+        <script src="~/Scripts/js/jquery-3.4.1.min.js"></script>
+        <script src="~/Assets/plugins/easing/easing.js"></script>
+        <script src="~/Assets/plugins/parallax-js-master/parallax.min.js"></script>
+        <script src="~/Assets/plugins/scrollTo/jquery.scrollTo.min.js"></script>
+        <script src="~/Assets/js/custom.js"></script>
+        <script src="~/Assets/styles/bootstrap4/popper.js"></script>
+        <script src="~/Assets/styles/bootstrap4/bootstrap.min.js"></script>
+        <script src="~/Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+        <script src="~/Assets/plugins/Isotope/isotope.pkgd.min.js"></script>
+        @RenderSection("scripts", false)
+        @RenderSection("modalscripts", false)
+        @RenderSection("scripts2", false)
+
+
+</body>
+</html>

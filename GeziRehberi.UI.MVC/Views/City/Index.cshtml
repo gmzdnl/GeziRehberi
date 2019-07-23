@@ -1,0 +1,176 @@
+﻿@using GeziRehberi.Model
+@model City
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@{
+    User user = null;
+    if (Session["kullanici"] != null)
+    {
+        user = Session["kullanici"] as User;
+    }
+}
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+                        <div class="logo"><a href="@Url.Action("Index","Home")">Travello</a></div>
+                        <nav class="main_nav">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                <li class="active"><a href="@Url.Action("Index","Home")">Anasayfa</a></li>
+                                <li><a href="#oneri">Önerilerimiz</a></li>
+                                <li><a href="#yorum">Yorum</a></li>
+                                <li><a href="#basadon">Şehir</a></li>
+                                <li><a href="@Url.Action("Index","Haber")">Haberler</a></li>
+                                <li><a href="@Url.Action("Index","About")">Hakkımızda</a></li>
+                                @if (user == null)
+                                {
+                                    
+                                }
+                                else
+                                {
+                                    <li class="nav-item dropdown">
+                                        <a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="top:50px !important;">
+                                            @user.Name @user.Surname
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="@Url.Action("Hesap","Home")">Hesabım</a>
+                                            <a class="dropdown-item" href="@Url.Action("Logout", "Account")">Çıkış Yap</a>
+                                        </div>
+                                    </li>
+                                }
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="news">
+    <div class="container">
+        <div class="row">
+
+            <!-- News Container -->
+            <div class="news_container">
+
+                <!-- News Post -->
+                <div class="news_post" id="basadon">
+                    <div class=""><img src="@Model.ImageUrl" alt=""></div>
+                    <div class="news_post_content">
+                        <div class="news_post_title"><a href="#">@Model.Name</a></div>
+                        <div class="news_post_text">
+                            <p>@Model.Description</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                @foreach (var item in Model.Places)
+                {
+                    <div class="news_post">
+                        <div class=""><img src="@item.ImageUrl" alt=""></div>
+                        <div class="news_post_content">
+                            <div class="news_post_title"><a href="#">@item.Name</a></div>
+                            <div class="news_post_text">
+                                <p>@item.Description</p>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+                <div id="oneri">
+                    <h3 class="oneri">Önerilerimiz</h3>
+                </div>
+
+                <br />
+            </div>
+
+            @foreach (var item in Model.Restaurants)
+            {
+                <div class="destination item">
+                    <div class="destination_image">
+                        <img src="@item.ImageUrl" alt="mekan görüntüsü">
+
+                    </div>
+                    <div class="destination_content">
+                        <h3 class="card-title">@item.Name</h3>
+                        <div class="destination_title">@item.Phone</div>
+                        <div class="destination_subtitle">
+                            <p class="card-text">@item.Address</p>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+
+
+            @foreach (var item in Model.Otels)
+            {
+
+                <div class="destination item">
+                    <div class="destination_image">
+                        <img src="@item.ImageUrl" alt="">
+
+                    </div>
+                    <div class="destination_content">
+                        <h3 class="card-title">@item.Name</h3>
+                        <div class="destination_title">@item.Phone</div>
+                        <div class="destination_subtitle">
+                            <p class="card-text">@item.Address</p>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="yorum">
+    <h3>Yorumlar</h3>
+</div>
+
+<div id="comment">
+    @Html.Action("Comment", "City")
+</div>
+
+
+
+
+@section scripts2{
+
+    <script>
+        function PostComment2() {
+            var comment = $("#commentmessage").val();
+            var id = $("#Cityid").val();
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("PostComment", "City")',
+                data: { comment: comment, id: id },
+                success: function (data) {
+                    $("#comment").html(data);
+                }
+            });
+        }
+    </script>
+}
+
+
+
+
+
+

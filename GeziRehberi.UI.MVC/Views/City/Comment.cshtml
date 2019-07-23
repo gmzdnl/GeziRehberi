@@ -1,0 +1,37 @@
+﻿@using GeziRehberi.Model
+@model City
+
+<input type="hidden" id="Cityid" value="@Model.ID" />
+
+@foreach (var item in ViewBag.Comments)
+{
+    <div class="row mb-5">
+
+        <div class="col-10">
+            <div class="card">
+                <div class="card-header">
+                    @item.User.Name @item.User.Surname ------ @item.Date
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text">@item.Comment </p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@if (Session["kullanici"] != null)
+{
+    <div class="form-group">
+        <textarea id="commentmessage" class="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Yorum Yapınız'" required=""></textarea>
+    </div>
+    <input type="button" onclick="PostComment2()" class="btn btn-primary" value="Yorum Yapınız" />
+}
+
+
+
+
+
+

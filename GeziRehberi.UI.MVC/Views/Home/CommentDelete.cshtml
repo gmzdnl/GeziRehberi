@@ -1,0 +1,26 @@
+﻿@using GeziRehberi.Model
+@model Comments
+@{
+    ViewBag.Title = "CommentDelete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<p>Silmek istediğinizden emin misiniz?</p>
+
+@using (Html.BeginForm("CommentDelete","Home",FormMethod.Post))
+{
+    <div>
+        <table>
+            <tr>
+                @Html.TextBoxFor(x=>x.ID,new {@type="hidden"})
+                <td>Yorum: </td>
+                <td>@Model.Comment</td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-primary">Evet</button></td>
+                <td><a href="@Url.Action("Hesap")" class="btn btn-danger">Hayır</a></td>
+            </tr>
+        </table>
+
+    </div>
+}
